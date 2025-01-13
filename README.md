@@ -7,7 +7,7 @@ This game is a text-based adventure game where the player must make strategic de
 
 Can you outsmart the guards and escape?
 
-
+#### Screenshots of the game
 ![Welcome](images/welcome.png)
 ![Vents](images/vent.png)
 ![Escaped](images/escaped.png)

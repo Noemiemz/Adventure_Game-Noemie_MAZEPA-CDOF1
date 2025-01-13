@@ -2,6 +2,61 @@ import tkinter as tk
 from tkinter import messagebox
 
 class GameInterface:
+    """
+    A class to represent the game interface for "Escape the Prison".
+    Attributes
+    ----------
+    root : tk.Tk
+        The root window of the Tkinter application.
+    text_area : tk.Text
+        The text area widget to display game text.
+    choice_frame : tk.Frame
+        The frame to hold choice buttons.
+    choice_buttons : list of tk.Button
+        A list of buttons for player choices.
+    current_function : function
+        The current game function being executed.
+    Methods
+    -------
+    __init__(root):
+        Initializes the game interface.
+    create_widgets():
+        Creates and packs the widgets for the game interface.
+    start_game():
+        Starts the game with an introductory message and initial action.
+    display_text(text):
+        Displays the given text in the text area.
+    clear_text():
+        Clears the text area.
+    update_choices(choices):
+        Updates the choice buttons with the given choices.
+    on_choice(choice):
+        Handles the player's choice and calls the appropriate action function.
+    cell_action():
+        Displays the initial cell action choices.
+    cell_action_choice(choice):
+        Handles the player's choice for the cell action.
+    vent_action():
+        Displays the vent action choices.
+    vent_action_choice(choice):
+        Handles the player's choice for the vent action.
+    key_action():
+        Displays the key action choices.
+    key_action_choice(choice):
+        Handles the player's choice for the key action.
+    hallway_action():
+        Displays the hallway action choices.
+    hallway_action_choice(choice):
+        Handles the player's choice for the hallway action.
+    armory_action():
+        Displays the armory action choices.
+    armory_action_choice(choice):
+        Handles the player's choice for the armory action.
+    secret_tunnel_action():
+        Displays the secret tunnel action choices.
+    secret_tunnel_action_choice(choice):
+        Handles the player's choice for the secret tunnel action.
+    """
     def __init__(self, root):
         self.root = root
         self.root.title("Escape the Prison")
@@ -42,7 +97,7 @@ class GameInterface:
                 button.pack(side=tk.LEFT, padx=5)
                 self.choice_buttons.append(button)
         for j in range(i+1, len(self.choice_buttons)):
-            self.choice_buttons[j].config(text="", state=tk.DISABLED)
+            self.choice_buttons[j].pack_forget()
 
     def on_choice(self, choice):
         if self.current_function == self.cell_action:
